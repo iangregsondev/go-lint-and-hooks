@@ -48,7 +48,7 @@ func main() {
 
 	const testme = "hellodd"
 
-	_ = testme
+	const testmex = "hellodd"
 }
 
 func test() (string, error) {
