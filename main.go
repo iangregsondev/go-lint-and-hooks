@@ -46,7 +46,7 @@ func main() {
 
 	fmt.Printf("hello")
 
-	const testme = "hello"
+	const testme = "hellodd"
 
 	_ = testme
 }
