@@ -10,7 +10,6 @@ repos:
     hooks:
       - id: golines
         args: [ -l ]
-
   - repo: https://github.com/golangci/golangci-lint
     rev: v1.59.1
     hooks:
