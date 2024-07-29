@@ -1,29 +1,36 @@
-version: '3'
+version: "3"
 
-  
 tasks:
   test:
     cmds:
       - go test ./...
   lint:
     cmds:
+      - golangci-lint run --new-from-rev HEAD
+  lint:allfiles:
+    cmds:
+      - golangci-lint run 
+  old_lint:
+    cmds:
       - go vet ./...
-      - staticcheck ./...   
+      - staticcheck ./...
   precommit:
     cmds:
       - pre-commit run --all-files
-        
+
   setup:
     cmds:
       - task: install-precommit
-      - task: install-golangci-lint  
+      - task: install-golangci-lint
       - task: install-golines
       - task: install-richgo
       - task: install-staticcheck
-      - task: install-mockery        
+      - task: install-mockery
   install-precommit:
     cmds:
       - pipx install pre-commit
+      - pre-commit autoupdate
+      - pre-commit install
   install-golangci-lint:
     cmds:
       - brew install golangci-lint
@@ -40,5 +47,3 @@ tasks:
   install-mockery:
     cmds:
       - go install github.com/vektra/mockery/v2@v2.43.2
-
-
