@@ -1,0 +1,44 @@
+version: '3'
+
+  
+tasks:
+  test:
+    cmds:
+      - go test ./...
+  lint:
+    cmds:
+      - go vet ./...
+      - staticcheck ./...   
+  precommit:
+    cmds:
+      - pre-commit run --all-files
+        
+  setup:
+    cmds:
+      - task: install-precommit
+      - task: install-golangci-lint  
+      - task: install-golines
+      - task: install-richgo
+      - task: install-staticcheck
+      - task: install-mockery        
+  install-precommit:
+    cmds:
+      - pipx install pre-commit
+  install-golangci-lint:
+    cmds:
+      - brew install golangci-lint
+      - brew upgrade golangci-lint
+  install-golines:
+    cmds:
+      - go install github.com/segmentio/golines@latest
+  install-richgo:
+    cmds:
+      - go install github.com/kyoh86/richgo@latest
+  install-staticcheck:
+    cmds:
+      - go install honnef.co/go/tools/cmd/staticcheck@latest
+  install-mockery:
+    cmds:
+      - go install github.com/vektra/mockery/v2@v2.43.2
+
+

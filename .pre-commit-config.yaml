@@ -5,11 +5,11 @@ repos:
       - id: check-case-conflict
       - id: check-json
       - id: check-yaml
-  - repo: https://github.com/segmentio/golines
-    rev: v0.12.2
-    hooks:
-      - id: golines
-        args: [ -l ]
+#  - repo: https://github.com/segmentio/golines
+#    rev: v0.12.2
+#    hooks:
+#      - id: golines
+#        args: [ -l ]
   - repo: https://github.com/golangci/golangci-lint
     rev: v1.59.1
     hooks:

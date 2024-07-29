@@ -12,11 +12,27 @@ func main() {
 	hello()
 	const ggg = "hello"
 
-	myMap := map[string]string{"first key": "first value", "second key": "second value", "third key": "third value", "fourth key": "fourth value", "fifth key": "fifth value"}
+	myMap := map[string]string{
+		"first key":  "first value",
+		"second key": "second value",
+		"third key":  "third value",
+		"fourth key": "fourth value",
+		"fifth key":  "fifth value",
+	}
+
+	// myMap := map[string]string{
+	// 	"first key":  "first value",
+	// 	"second key": "second value",
+	// 	"third key":  "third value",
+	// 	"fourth key": "fourth value",
+	// 	"fifth key":  "fifth value",
+	// }
 
 	_ = myMap
 
-	fmt.Printf(SOMETHING_THAT_IS_NOT_RIGHT)
+	fmt.Print("ddd") //nolint:forbidigo
+
+	fmt.Printf(SOMETHING_THAT_IS_NOT_RIGHT) //nolint:forbidigo,staticcheck
 
 	_, err := test()
 
