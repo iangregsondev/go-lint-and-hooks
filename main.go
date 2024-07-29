@@ -45,6 +45,10 @@ func main() {
 	}
 
 	fmt.Printf("hello")
+
+	const testme = "hello"
+
+	_ = testme
 }
 
 func test() (string, error) {
